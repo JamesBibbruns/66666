@@ -85,14 +85,14 @@ button:last-of-type:hover {
         <p id="usernameDisplay"></p>
     </header>  
     
-    <div id="cookieInfo">
-        <label for="usernameInput">Username:</label> 
-        <input type="text" id="usernameInput" placeholder="Name"> 
-        <label for="usernameInput">pass:</label> 
-        <input type="password" placeholder="Pass"> 
-        <button onclick="setUsername()">Register</button> 
-        <button onclick="getUsername()">Login</button> 
-    </div>
+<div id="cookieInfo">
+    <label for="usernameInput">Username:</label> 
+    <input type="text" id="usernameInput" placeholder="Name" oninput="checkInputs()">
+    <label for="passwordInput">Pass:</label> 
+    <input type="password" id="passwordInput" placeholder="Pass" oninput="checkInputs()">
+    <button onclick="setUsername()">Register</button> 
+    <button onclick="getUsername()">Login</button> 
+</div>
 <footer>
     <p>Copyright &copy; 2024 James All rights reserved.</p>
 </footer>
