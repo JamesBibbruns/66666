@@ -14,21 +14,29 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to retrieve and display the username from the cookie
 function getUsername() {
     const username = getCookie('username');
+    const usernameDisplay = document.getElementById('usernameDisplay');
+    const usernameInput = document.getElementById('usernameInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const someElement = document.getElementById('someElementId');
+
     if (username !== '') {
-        document.getElementById('usernameDisplay').textContent = `login-Username: ${username}`;
+        usernameDisplay.textContent = `login-Username: ${username}`;
+        
+        function checkInputs() {
+            if (usernameInput.value !== '' && passwordInput.value !== '') {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Assuming you need to call checkInputs somewhere
+        // checkInputs();
     } else {
-        document.getElementById('someElementId').textContent =' Guest' ;
+        someElement.textContent = 'Guest';
     }
 }
 
-function checkInputs() {
-    var usernameInput = document.getElementById('usernameInput').value;
-    var passwordInput = document.getElementById('passwordInput').value;
 
-    if (usernameInput !== '' && passwordInput !== '') {
-        window.location.href = 'index.html'; // Replace 'index.html' with the path to your index page
-    }
-}
+
 
 // Function to set a cookie with a specified name, value, and expiration time
 function setCookie(cookieName, cookieValue, expirationDays) {
