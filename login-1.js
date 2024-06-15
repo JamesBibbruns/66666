@@ -16,13 +16,19 @@ function getUsername() {
     const username = getCookie('username');
     if (username !== '') {
         document.getElementById('usernameDisplay').textContent = `login-Username: ${username}`;
-        window.location.href = 'index.html'; 
     } else {
         document.getElementById('someElementId').textContent =' Guest' ;
     }
 }
 
+function checkInputs() {
+    var usernameInput = document.getElementById('usernameInput').value;
+    var passwordInput = document.getElementById('passwordInput').value;
 
+    if (usernameInput !== '' && passwordInput !== '') {
+        window.location.href = 'index.html'; // Replace 'index.html' with the path to your index page
+    }
+}
 
 // Function to set a cookie with a specified name, value, and expiration time
 function setCookie(cookieName, cookieValue, expirationDays) {
