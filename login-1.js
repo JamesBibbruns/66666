@@ -2,8 +2,8 @@
 function setUsername() {
     const usernameInput = document.getElementById('usernameInput').value.trim();
     if (usernameInput !== '') {
-        setCookie('username', usernameInput, 7); // Set cookie with name "username" lasting 7 days
-        alert(`Username "${usernameInput}" has been set in the cookie.`);
+        setCookie('username', usernameInput, 1); // Set cookie with name "username" lasting 7 days
+        alert(`Username "${usernameInput}" has been register.`);
     } else {
         alert('Please enter a valid username.');
     }
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function getUsername() {
     const username = getCookie('username');
     if (username !== '') {
-        document.getElementById('usernameDisplay').textContent = `Username: ${username}`;
+        document.getElementById('usernameDisplay').textContent = `login-Username: ${username}`;
         window.location.href = 'index.html'; 
     } else {
         document.getElementById('someElementId').textContent =' Guest' ;
